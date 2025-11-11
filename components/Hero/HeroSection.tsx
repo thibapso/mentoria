@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 import { cycleWords } from '@/lib/animations/heroAnimations'
 import LightRays from './LightRays'
+import HeroParticles from './HeroParticles'
 import styles from './HeroSection.module.scss'
 
 export default function HeroSection() {
@@ -17,6 +18,7 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       <LightRays />
+      <HeroParticles />
 
       <div className={styles.content}>
         <span className={styles.name}>MentorIA</span>

@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 1.5rem;
+  padding: 5rem 2rem;
   text-align: center;
   box-sizing: border-box;
 }
@@ -14,25 +14,25 @@
 .content {
   position: relative;
   z-index: 10;
-  color: #fff;
+  color: #ffffff;
   width: 100%;
-  max-width: 720px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 1rem auto 0;
 }
 
 .name {
   display: block;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.8rem;
 }
 
 .title {
-  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-size: clamp(2.5rem, 6vw, 3.8rem); 
   font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
 }
 
 .word {
@@ -42,7 +42,7 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
   will-change: transform, opacity;
 
-  background: linear-gradient(135deg, #8ec5fc, #3b82f6); // azul claro → azul escuro
+  background: linear-gradient(135deg, #6fb1fc, #1e40af); // gradiente diagonal azul
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -50,11 +50,11 @@
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2.3vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.7;
-  max-width: 600px;
-  margin: 0 auto;
+  font-size: clamp(1.15rem, 2.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 auto 1.8rem auto;
   word-break: keep-all;
 
   i {
@@ -64,7 +64,7 @@
 
   br {
     display: block;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -72,20 +72,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-top: 2.2rem;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
   flex-wrap: wrap;
 
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem 2rem;
+    gap: 0.6rem;
+    padding: 0.6rem 2.2rem;
     border-radius: 55px;
     text-decoration: none;
     font-weight: 500;
-    color: #e4e4e4;
+    color: #ffffff;
     transition: all 0.3s ease;
     white-space: nowrap;
 
@@ -96,7 +96,7 @@
     }
 
     &:first-child {
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(255, 255, 255, 0.65);
       background: transparent;
 
       &:hover {
@@ -117,21 +117,21 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .hero {
-    padding: 3rem 1rem;
+    padding: 4rem 1.2rem;
   }
 
   .title {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-size: clamp(2rem, 6vw, 3rem);
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.6;
   }
 
   .cta {
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.8rem;
 
     a {
       width: 100%;
