@@ -1,19 +1,48 @@
 'use client'
 
+import Image from 'next/image'
+import { useEffect } from 'react'
+import Link from 'next/link'
+import { cycleWords } from '@/lib/animations/heroAnimations'
 import LightRays from './LightRays'
 import styles from './HeroSection.module.scss'
 
 export default function HeroSection() {
+  useEffect(() => {
+    cycleWords()
+  }, [])
+
   return (
     <section className={styles.hero}>
       <LightRays />
+
       <div className={styles.content}>
+        <span className={styles.name}>MentorIA</span>
+
         <h1 className={styles.title}>
-          Bem-vindo à <span>Minha Landing</span>
+          Às vezes, o que falta não é talento. É <span className="word">direção.</span>
         </h1>
+
         <p className={styles.subtitle}>
-          Explore o conteúdo e descubra o poder do design e da performance.
+          <i>O MentorIA te guia com propósito, evolução e autoconfiança.</i>
+          <br />
+          Toda jornada começa quando alguém aponta o norte. Está pronto para ouvir quem quer te ver crescer?
         </p>
+
+        <div className={styles.cta}>
+          <Link href="#" className={styles.ctaPrimary}>
+            Viva o novo
+            <Image
+              src="/brain-cta.svg"
+              alt="Ícone de cérebro"
+              width={20}
+              height={20}
+            />
+          </Link>
+          <Link href="#" className={styles.ctaSecondary}>
+            Utilize
+          </Link>
+        </div>
       </div>
     </section>
   )
