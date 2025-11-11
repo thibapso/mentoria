@@ -19,11 +19,10 @@
   justify-content: space-between;
   max-width: 1200px;
   width: min(90%, 700px);
-  padding: 0.6rem 1.5rem;
+  padding: 0.75rem 2rem;
   margin: 0 auto;
   border-radius: 40px;
 
-  /* vidro mais sutil e limpo */
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -33,7 +32,7 @@
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   }
 }
@@ -41,8 +40,29 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1.05rem;
   cursor: pointer;
+  text-decoration: none;
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    color: #e4e4e4;
+    transition: color 0.3s ease;
+  }
+
+  span {
+    font-weight: 600;
+    color: #e4e4e4;
+    transition: color 0.3s ease;
+  }
+
+  &:hover h1,
+  &:hover span {
+    color: #ffffff;
+  }
 }
 
 .lista {
@@ -51,12 +71,40 @@
   list-style: none;
 
   a {
-    color: white;
+    color: #e4e4e4;
     text-decoration: none;
-    font-weight: 500;
+    position: relative;
+
+    font-family: 'Poppins', sans-serif;
+    font-variation-settings: 'wght' 500; // define peso inicial
+    font-synthesis: none;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+
+    transition: color 0.3s ease, font-variation-settings 0.4s ease,
+      // suaviza o peso
+      transform 0.25s ease;
 
     &:hover {
-      text-decoration: underline;
+      color: #ffffff;
+      font-variation-settings: 'wght' 600; // peso animável
+      transform: translateY(-1px); // leve flutuação opcional
+    }
+
+    /* underline suave */
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0%;
+      height: 1.65px;
+      background: #fff;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
   }
 }
