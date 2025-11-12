@@ -20,13 +20,8 @@ export default function RootLayout({
         <link rel="icon" href="/logo.svg" />
       </head>
       <body>
-        {/* Filtro global invisível */}
         <GlassFilter />
-
-        {/* Plugin de acessibilidade VLibras */}
         <VLibras />
-
-        {/* Conteúdo da aplicação */}
         {children}
       </body>
     </html>
