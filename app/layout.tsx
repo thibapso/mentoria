@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.scss";
 import GlassFilter from "@/components/Navbar/GlassFilter";
+import VLibras from "@/components/VLibras/VLibras";
 
 export const metadata: Metadata = {
   title: "MentorIA",
@@ -21,6 +22,9 @@ export default function RootLayout({
       <body>
         {/* Filtro global invisível */}
         <GlassFilter />
+
+        {/* Plugin de acessibilidade VLibras */}
+        <VLibras />
 
         {/* Conteúdo da aplicação */}
         {children}
