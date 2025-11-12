@@ -24,19 +24,17 @@
   border-radius: 40px;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 
-  // Fundo com opacidade balanceada para legibilidade
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.18) 0%,
     rgba(255, 255, 255, 0.14) 100%
   );
 
-  // Efeito de vidro líquido profissional com blur ultra forte
-  backdrop-filter: blur(50px) saturate(180%) brightness(1.15);
-  -webkit-backdrop-filter: blur(50px) saturate(180%) brightness(1.15);
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.15);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.15);
 
-  // Borda com gradiente sutil
   border: 1px solid transparent;
   background-clip: padding-box;
 
@@ -44,22 +42,13 @@
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 40px;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.1)
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+    backdrop-filter: blur(8px);
+    filter: url(#glass-distortion);
+    opacity: 0.85;
+    z-index: 0;
     pointer-events: none;
   }
 
-  // Reflexo interno líquido
   &::after {
     content: "";
     position: absolute;
@@ -74,11 +63,16 @@
       transparent 100%
     );
     pointer-events: none;
+    z-index: 1;
   }
 
-  // Sombras profissionais em camadas
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .logo {
@@ -133,7 +127,6 @@
       font-variation-settings: "wght" 600;
     }
 
-    /* underline suave */
     &::after {
       content: "";
       position: absolute;

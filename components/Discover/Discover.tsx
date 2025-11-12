@@ -23,9 +23,13 @@ const Lanyard = dynamic(() => import("../Lanyard/Lanyard"), {
   ),
 });
 
-export default function Discover() {
+interface DiscoverProps {
+  id?: string;
+}
+
+export default function Discover({ id }: DiscoverProps) {
   return (
-    <section className={styles.discover}>
+    <section id={id} className={styles.discover}>
       <div className={styles.container}>
         <div className={styles.small}>1</div>
         <div className={styles.small}>2</div>

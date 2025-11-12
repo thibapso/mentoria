@@ -37,7 +37,7 @@ export default function HeroSection() {
         </p>
 
         <div className={styles.cta}>
-          <Link href="#" className={styles.ctaPrimary}>
+          <Link href="#discover" className={styles.ctaPrimary}>
             Viva o novo
             <Image
               src="/brain-cta.svg"

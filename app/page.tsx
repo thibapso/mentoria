@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Navbar />
       <Hero />
-      <Discover />
+      <Discover id="discover"/>
       <Footer />
       <BackToTop />
     </>

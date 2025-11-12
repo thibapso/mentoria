@@ -1,22 +1,30 @@
-import type { Metadata } from 'next'
-import './globals.scss'
+import type { Metadata } from "next";
+import "./globals.scss";
+import GlassFilter from "@/components/Navbar/GlassFilter";
 
 export const metadata: Metadata = {
-  title: 'MentorIA',
-  description: 'Com a MentorIA, você nunca estará sozinho em sua jornada de aprendizado.',
-}
+  title: "MentorIA",
+  description:
+    "Com a MentorIA, você nunca estará sozinho em sua jornada de aprendizado.",
+};
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="pt-br">
       <head>
         <link rel="icon" href="/logo.svg" />
       </head>
-      <body>{children}</body>
+      <body>
+        {/* Filtro global invisível */}
+        <GlassFilter />
+
+        {/* Conteúdo da aplicação */}
+        {children}
+      </body>
     </html>
-  )
+  );
 }
