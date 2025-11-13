@@ -1,6 +1,6 @@
-@use "../styles/variables" as v;
-@use "../styles/index";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600&family=Space+Grotesk:wght@400;700&display=swap");
+@use '../styles/variables' as v;
+@use '../styles/index';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&family=Space+Grotesk:wght@400;700&display=swap');
 
 :root {
   --yellow-500: #eab308;
@@ -36,7 +36,7 @@ html {
   }
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   &::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.15);
@@ -63,7 +63,7 @@ html {
   }
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   html {
     ::selection {
       background-color: #1e3a8a;
