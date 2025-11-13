@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./text-hover-effect.module.scss";
 
@@ -49,11 +49,11 @@ export const TextHoverEffect = ({
           >
             {hovered && (
               <>
-                <stop offset="0%" stopColor={"var(--yellow-500)"} />
-                <stop offset="25%" stopColor={"var(--red-500)"} />
-                <stop offset="50%" stopColor={"var(--blue-500)"} />
-                <stop offset="75%" stopColor={"var(--cyan-500)"} />
-                <stop offset="100%" stopColor={"var(--violet-500)"} />
+                <stop offset="0%" stopColor="#5eead4" />  {/* teal-300 */}
+                <stop offset="25%" stopColor="#38bdf8" /> {/* sky-400 */}
+                <stop offset="50%" stopColor="#3b82f6" /> {/* blue-500 */}
+                <stop offset="75%" stopColor="#6366f1" /> {/* indigo-500 */}
+                <stop offset="100%" stopColor="#a78bfa" />{/* violet-400 */}
               </>
             )}
           </linearGradient>
