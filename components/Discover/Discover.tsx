@@ -5,6 +5,7 @@ import styles from "./Discover.module.scss";
 import dynamic from "next/dynamic";
 import DecryptedText from "../DecryptedText/DecryptedText";
 import decryptedStyles from "../DecryptedText/DecryptedText.module.scss";
+import Folder from "../Folder/Folder";
 
 const Lanyard = dynamic(() => import("../Lanyard/Lanyard"), {
   ssr: false,
@@ -47,7 +48,35 @@ export default function Discover({ id }: DiscoverProps) {
             parentClassName={decryptedStyles.decryptedText}
           />
         </div>
-        <div className={styles.small}>2</div>
+        <div className={styles.small}>
+          <Folder
+            size={1.25}
+            color="#3b82f6"
+            items={[
+              <Image
+                key="1"
+                src="/folder/1.webp"
+                alt="Documento 1"
+                fill
+                style={{ objectFit: "cover" }}
+              />,
+              <Image
+                key="2"
+                src="/folder/2.webp"
+                alt="Documento 2"
+                fill
+                style={{ objectFit: "cover" }}
+              />,
+              <Image
+                key="3"
+                src="/folder/3.webp"
+                alt="Documento 3"
+                fill
+                style={{ objectFit: "cover" }}
+              />,
+            ]}
+          />
+        </div>
         <div className={styles.small}>3</div>
         <div className={styles.small}>4</div>
         <div className={styles.large}>
