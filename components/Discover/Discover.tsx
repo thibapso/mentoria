@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import DecryptedText from "../DecryptedText/DecryptedText";
 import decryptedStyles from "../DecryptedText/DecryptedText.module.scss";
 import Folder from "../Folder/Folder";
+import { WordRotate } from "../WordRotate/WordRotate";
 
 const Lanyard = dynamic(() => import("../Lanyard/Lanyard"), {
   ssr: false,
@@ -50,6 +51,21 @@ interface DiscoverProps {
 }
 
 export default function Discover({ id }: DiscoverProps) {
+  const professions = [
+    'Desenvolvedor',
+    'Designer',
+    'Editor',
+    'Analista de Dados',
+    'Engenheiro de Software',
+    'Product Manager',
+    'DevOps',
+    'Arquiteto de Soluções',
+    'Cientista de Dados',
+    'QA Engineer',
+    'UX Researcher',
+    'Tech Lead',
+  ];
+
   return (
     <section id={id} className={styles.discover}>
       <div className={styles.container}>
@@ -99,7 +115,13 @@ export default function Discover({ id }: DiscoverProps) {
         <div className={styles.small}>
           <Globe />
         </div>
-        <div className={styles.small}>4</div>
+        <div className={styles.small}>
+          <WordRotate
+            words={professions}
+            duration={2500}
+            className={styles.wordRotate}
+          />
+        </div>
         <div className={styles.large}>
           <Lanyard
             position={[0, 0, 20]}
