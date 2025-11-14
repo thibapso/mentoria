@@ -50,7 +50,7 @@ export default function Hero({ id }: HeroProps) {
               height={15}
             />
           </Link>
-          <Link href="/" className={styles.ctaSecondary}>
+          <Link href="#product" className={styles.ctaSecondary}>
             Utilize
           </Link>
         </div>

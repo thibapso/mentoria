@@ -167,7 +167,7 @@ export default function Benefits({ id }: BenefitsProps) {
               />
             </div>
             <p className={styles.bentoCaption}>
-              Fundadores da{" "}
+              Fundadores do{" "}
               <span>
                 <i>MentorIA</i>
               </span>

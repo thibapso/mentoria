@@ -28,7 +28,7 @@ export default function SectionIndicator() {
     return () => observer.disconnect();
   }, []);
 
-  const sections = ["Hero", "Discover", "Footer"];
+  const sections = ["Hero", "Discover", "Product", "Benefits"];
 
   const scrollToSection = (index: number) => {
     const section = document.querySelectorAll("section")[index];
