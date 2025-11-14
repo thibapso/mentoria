@@ -181,37 +181,37 @@ export default function Benefits({ id }: BenefitsProps) {
                   {
                     name: "Fullstack Engineer",
                     message: "Microsoft - Vaga remota disponível",
-                    time: "5h atrás",
+                    time: "2h atrás",
                     icon: "/business/2.png",
                   },
                   {
                     name: "React Developer",
                     message: "Amazon - Salário acima da média",
-                    time: "1d atrás",
+                    time: "4h atrás",
                     icon: "/business/2.png",
                   },
                   {
                     name: "Backend Developer",
                     message: "Meta - Oportunidade senior remota",
-                    time: "3h atrás",
+                    time: "6h atrás",
                     icon: "/business/1.png",
                   },
                   {
                     name: "DevOps Engineer",
                     message: "Netflix - Infraestrutura cloud",
-                    time: "6h atrás",
+                    time: "7h atrás",
                     icon: "/business/3.png",
                   },
                   {
                     name: "Mobile Developer",
                     message: "Apple - Desenvolvimento iOS nativo",
-                    time: "8h atrás",
+                    time: "12h atrás",
                     icon: "/business/2.png",
                   },
                   {
                     name: "UI/UX Designer",
                     message: "Spotify - Design de interfaces",
-                    time: "12h atrás",
+                    time: "14h atrás",
                       icon: "/business/2.png",
                   },
                   {
@@ -235,7 +235,7 @@ export default function Benefits({ id }: BenefitsProps) {
                   {
                     name: "Analista de Dados",
                     message: "Cielo - Análise de dados",
-                    time: "7h atrás",
+                    time: "3d atrás",
                     icon: "/business/2.png",
                   },
                 ]}
