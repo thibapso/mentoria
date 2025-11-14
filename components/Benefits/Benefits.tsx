@@ -110,6 +110,37 @@ export default function Benefits({ id }: BenefitsProps) {
             </div>
           </GlareHover>
         </div>
+
+        <div className={styles.features}>
+          <div className={styles.featureItem}>
+            <h3 className={styles.featureTitle}>Análise de Compatibilidade</h3>
+            <p className={styles.featureDescription}>
+              O sistema cruza seu currículo com os requisitos da vaga,
+              identificando forças, lacunas e o nível real de aderência. Você
+              descobre rapidamente o que já domina e o que precisa ajustar.
+            </p>
+          </div>
+
+          <div className={styles.featureItem}>
+            <h3 className={styles.featureTitle}>
+              Recomendações de Aprimoramento
+            </h3>
+            <p className={styles.featureDescription}>
+              Com base nas lacunas identificadas, geramos sugestões práticas e
+              direcionadas, com habilidades para desenvolver, experiências a
+              destacar e pontos que aumentam sua compatibilidade.
+            </p>
+          </div>
+
+          <div className={styles.featureItem}>
+            <h3 className={styles.featureTitle}>Métricas de Evolução</h3>
+            <p className={styles.featureDescription}>
+              Apresentamos o percentual de aderência e o quanto cada melhoria
+              impacta sua jornada. Você acompanha seu crescimento com clareza,
+              entendendo onde está e até onde pode ir.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
