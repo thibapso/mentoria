@@ -141,6 +141,29 @@ export default function Benefits({ id }: BenefitsProps) {
             </p>
           </div>
         </div>
+
+        <div className={styles.bentoGrid}>
+          <div className={styles.bentoCard}>
+            <div className={styles.bentoContent}>
+              <h3 className={styles.bentoTitle}>A</h3>
+            </div>
+            <p className={styles.bentoCaption}>
+              Fundadores da{" "}
+              <span>
+                <i>MentorIA</i>
+              </span>
+            </p>
+          </div>
+
+          <div className={styles.bentoCard}>
+            <div className={styles.bentoContent}>
+              <h3 className={styles.bentoTitle}>B</h3>
+            </div>
+            <p className={styles.bentoCaption}>
+              Notificações de vagas e oportunidades
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
