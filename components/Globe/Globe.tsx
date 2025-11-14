@@ -4,30 +4,18 @@ import createGlobe, { COBEOptions } from "cobe";
 import { useCallback, useEffect, useRef } from "react";
 import { useSpring } from "react-spring";
 
-// Conexões entre cidades (origem -> destino)
-const connections: [number[], number[]][] = [
-  [[-23.5505, -46.6333], [40.7128, -74.006]], // São Paulo -> Nova York
-  [[40.7128, -74.006], [51.5074, -0.1278]], // Nova York -> Londres
-  [[51.5074, -0.1278], [21.5433, 39.1728]], // Londres -> Jedá
-  [[21.5433, 39.1728], [1.3521, 103.8198]], // Jedá -> Singapura
-  [[1.3521, 103.8198], [35.6762, 139.6503]], // Singapura -> Tóquio
-  [[35.6762, 139.6503], [21.3099, -157.8581]], // Tóquio -> Hawaii
-  [[-1.4558, -48.4902], [-23.5505, -46.6333]], // Belém -> São Paulo
-  [[51.1694, 71.4491], [35.6762, 139.6503]], // Astana -> Tóquio
-];
-
 const GLOBE_CONFIG: COBEOptions = {
   width: 1000,
   height: 1000,
-  onRender: () => { },
+  onRender: () => {},
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.25,
   dark: 1,
   diffuse: 0.4,
   mapSamples: 16000,
-  mapBrightness: 3.2,
-  baseColor: [0.45, 0.45, 0.45],
+  mapBrightness: 2.45,
+  baseColor: [0.35, 0.35, 0.35],
   markerColor: [0.08, 0.2, 0.45],
   glowColor: [0.15, 0.15, 0.15],
   markers: [
@@ -41,6 +29,7 @@ const GLOBE_CONFIG: COBEOptions = {
     { location: [1.3521, 103.8198], size: 0.06 }, // Singapura
     { location: [51.1694, 71.4491], size: 0.06 }, // Astana
     { location: [-33.8688, 151.2093], size: 0.06 }, // Sydney
+    { location: [-6.1659, 39.2026], size: 0.06 }, // Zanzibar
   ],
 };
 
@@ -53,7 +42,6 @@ export default function Globe({
 }) {
   const phi = useRef(0);
   const width = useRef(0);
-  const animationTime = useRef(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pointerInteracting = useRef<number | null>(null);
   const pointerInteractionMovement = useRef(0);
@@ -83,30 +71,8 @@ export default function Globe({
       state.phi = phi.current + r.get();
       state.width = width.current * 2;
       state.height = width.current * 2;
-
-      animationTime.current += 0.01;
-      const animatedMarkers = connections.flatMap(([start, end]) => {
-        const numDots = 3;
-        return Array.from({ length: numDots }, (_, dotIndex) => {
-          const offset = dotIndex / numDots + animationTime.current * 0.3;
-          const progress = offset % 1;
-
-          return {
-            location: [
-              start[0] + (end[0] - start[0]) * progress,
-              start[1] + (end[1] - start[1]) * progress,
-            ] as [number, number],
-            size: 0.03,
-          };
-        });
-      });
-
-      state.markers = [
-        ...config.markers!,
-        ...animatedMarkers,
-      ];
     },
-    [pointerInteracting, r, config.markers]
+    [pointerInteracting, r]
   );
 
   const onResize = () => {
