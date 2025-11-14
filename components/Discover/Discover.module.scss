@@ -1,4 +1,4 @@
-@use "../../styles/variables" as v;
+@use '../../styles/variables' as v;
 
 .discover {
   width: 100%;
@@ -82,7 +82,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 1);
   font-size: 0.875rem;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   z-index: 10;
   pointer-events: none;
 
@@ -104,12 +104,12 @@
 
   background: linear-gradient(
     120deg,
-    rgb(80, 143, 245) 0%,    /* azul vibrante */
-    rgb(90, 158, 247) 33%,   /* azul médio claro */
-    rgb(92, 141, 240) 66%,  /* azul claro */
-    rgb(72, 108, 199) 100%  /* azul bem suave */
+    rgb(80, 143, 245) 0%,
+    rgb(90, 158, 247) 33%,
+    rgb(92, 141, 240) 66%,
+    rgb(72, 108, 199) 100%
   );
-  
+
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
